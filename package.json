@@ -1,6 +1,6 @@
 {
   "name": "diaporama",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Informative cards slider",
   "main": "index.js",
   "scripts": {
