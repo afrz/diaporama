@@ -3,6 +3,7 @@ import "./Root.scss";
 
 import Cube from "./Cube";
 import Button from "./Button";
+import Card from "./Card";
 
 const Root = () => {
   return (
@@ -16,6 +17,9 @@ const Root = () => {
         <Button>ADN</Button>
         <Button>Compétences</Button>
         <Button>Equipes</Button>
+      </div>
+      <div className="flexible">
+        <Card />
       </div>
     </React.Fragment>
   );
