@@ -10,9 +10,12 @@ const Root = () => {
       <div className="flexible">
         <Cube />
         <Cube />
+        <Cube />
       </div>
-      <div className="flexible">
-        <Button />
+      <div className="flexible column">
+        <Button>ADN</Button>
+        <Button>Compétences</Button>
+        <Button>Equipes</Button>
       </div>
     </React.Fragment>
   );

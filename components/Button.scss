@@ -1,68 +1,68 @@
-#menu {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  margin-top: -130px;
-}
-#menu ul {
-  list-style-type: none;
-}
-#menu li {
+.btn-effect {
   margin: 15px auto 0 auto;
   text-align: center;
-}
-#menu li.active a {
-  color: #6f6f6f;
-  border: 1px solid #6f6f6f;
-}
-#menu a {
-  display: inline-block;
-  padding: 5px 10px;
-  font: normal 14px/14px "RR";
-  color: #b3b3b3;
-  text-transform: uppercase;
-}
-#menu .no-active a {
-  position: relative;
-}
-#menu .no-active a span {
-  position: absolute;
-  background-color: #6f6f6f;
-  -moz-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -o-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-#menu .no-active a .line-1 {
-  left: 0;
-  top: 0;
-  width: 0%;
-  height: 1px;
-}
-#menu .no-active a .line-2 {
-  right: 0;
-  top: 0;
-  width: 1px;
-  height: 0%;
-}
-#menu .no-active a .line-3 {
-  right: 0;
-  bottom: 0;
-  width: 0%;
-  height: 1px;
-}
-#menu .no-active a .line-4 {
-  left: 0;
-  bottom: 0;
-  width: 1px;
-  height: 0%;
-}
-#menu .no-active a:hover .line-1,
-#menu .no-active a:hover .line-3 {
-  width: 100%;
-}
-#menu .no-active a:hover .line-2,
-#menu .no-active a:hover .line-4 {
-  height: 100%;
+  list-style-type: none;
+
+  a {
+    display: inline-block;
+    padding: 5px 10px;
+    font: normal 14px/14px "RR";
+    color: #b3b3b3;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  &.active a {
+    color: #6f6f6f;
+    border: 1px solid #6f6f6f;
+  }
+
+  &.no-active a {
+    position: relative;
+
+    span {
+      position: absolute;
+      background-color: #6f6f6f;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .line-1 {
+      left: 0;
+      top: 0;
+      width: 0%;
+      height: 1px;
+    }
+
+    .line-2 {
+      right: 0;
+      top: 0;
+      width: 1px;
+      height: 0%;
+    }
+
+    .line-3 {
+      right: 0;
+      bottom: 0;
+      width: 0%;
+      height: 1px;
+    }
+
+    .line-4 {
+      left: 0;
+      bottom: 0;
+      width: 1px;
+      height: 0%;
+    }
+
+    &:hover {
+      .line-1,
+      .line-3 {
+        width: 100%;
+      }
+      .line-2,
+      .line-4 {
+        height: 100%;
+      }
+    }
+  }
 }
