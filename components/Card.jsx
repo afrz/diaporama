@@ -1,35 +1,33 @@
 import React from "react";
+import "./Card.scss";
 
 const Card = () => {
   return (
     <div
-      className="HARD dude"
-      data-city="lyon"
-      data-speciality="XXXXXXXXXXXXXXXXXXXXXX"
-      style={{ height: 203, width: 203 }}
+      className="card dude"
+      data-city="lyon paris"
+      data-speciality="droit-social"
+      data-hover="false"
     >
-      <div className="dude-infos" style={{ left: 0 + "%" }}>
+      <div className="dude-infos">
         <div className="text">
           <h3 className="dude-infos-name">
-            <span className="name">XXXXXX</span>
-            <span className="surname">XXXXXXXXXXXXXXXXX</span>
+            <span className="name">Alexis</span>
+            <span className="surname">Franzosisch</span>
           </h3>
-          <h2 className="dude-infos-speciality">
-            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          </h2>
+          <h2 className="dude-infos-speciality">DEVELOPER</h2>
         </div>
         <div className="arrow">
           <div className="square" />
         </div>
       </div>
-      <a href="" className="link">
-        <img
-          src="gallery_XXXX.jpg"
-          alt="XXXXXXXXXXXXXXXXXXXXXX"
-          className="photo"
-        />
+      <a href="#" className="link">
+        <img alt="Alexis Franzosisch" className="photo" />
         <div className="strips">
+          <div className="strip-top" />
           <div className="strip-right" />
+          <div className="strip-bottom" />
+          <div className="strip-left" />
         </div>
       </a>
     </div>
