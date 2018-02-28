@@ -4,7 +4,6 @@
   width: 200px;
 
   position: relative;
-  // z-index: 0;
 
   .link {
     display: block;
@@ -15,7 +14,8 @@
     background-color: #fff;
     background: burlywood;
 
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    // transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    //
     z-index: 1;
     // background: 0;
   }
@@ -32,6 +32,8 @@
     background: chocolate;
 
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: 0.3s;
+    z-index: 1;
   }
 
   .strips {
@@ -41,47 +43,58 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    // background: brown;
 
-    .strip-top {
-      position: absolute;
-      left: 100%;
-      top: 0;
-      width: 100%;
-      height: 5px;
-      background-color: #aca196;
-    }
+    .strip {
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-    .strip-right {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      width: 5px;
-      height: 0%;
-      background-color: #aca196;
-    }
+      &.strip-top {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 5px;
+        background-color: chocolate;
+        z-index: 2;
+      }
 
-    .strip-bottom {
-      position: absolute;
-      left: 100%;
-      bottom: 0;
-      width: 100%;
-      height: 5px;
-      background-color: #aca196;
-    }
+      // &.strip-right {
+      //   position: absolute;
+      //   right: 0;
+      //   top: 50%;
+      //   width: 5px;
+      //   height: 0%;
+      //   background-color: #aca196;
+      // }
 
-    .strip-left {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 5px;
-      height: 0%;
-      background-color: #aca196;
+      // &.strip-bottom {
+      //   position: absolute;
+      //   left: 100%;
+      //   bottom: 0;
+      //   width: 100%;
+      //   height: 5px;
+      //   background-color: #aca196;
+      // }
+
+      // &.strip-left {
+      //   position: absolute;
+      //   left: 0;
+      //   top: 50%;
+      //   width: 5px;
+      //   height: 0%;
+      //   background-color: #aca196;
+      // }
     }
   }
 
   &:hover {
     .dude-infos {
       left: 100%;
+    }
+    .strip {
+      &.strip-top {
+        width: 100%;
+      }
     }
   }
 }

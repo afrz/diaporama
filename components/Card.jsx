@@ -24,10 +24,10 @@ const Card = () => {
       <a href="#" className="link">
         <img alt="Alexis Franzosisch" className="photo" />
         <div className="strips">
-          <div className="strip-top" />
-          <div className="strip-right" />
-          <div className="strip-bottom" />
-          <div className="strip-left" />
+          <div className="strip strip-top" />
+          <div className="strip strip-right" />
+          <div className="strip strip-bottom" />
+          <div className="strip strip-left" />
         </div>
       </a>
     </div>
