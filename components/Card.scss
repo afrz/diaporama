@@ -16,11 +16,18 @@
 
     // transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     //
-    z-index: 1;
+    z-index: 2;
     // background: 0;
 
     img {
       text-align: center;
+    }
+
+    &:hover + .dude-infos {
+      // background: green;
+      left: 100%;
+      transition: left 0.3s ease-in;
+      transition-delay: 450ms;
     }
   }
 
@@ -35,9 +42,16 @@
     background-color: #aca196;
     background: chocolate;
 
-    transition: left 0.3s ease-in 400ms;
-    // transition-delay: 0.4s;
+    transition: left 0.3s ease-in;
+    transition-delay: 0s;
     z-index: 1;
+
+    // &:hover {
+    //   left: 100%;
+    //   transition: left 0.3s ease-in 1000ms;
+    //   // transition: left 0.3s ease-in 0s;
+    //   background: red;
+    // }
   }
 
   .strips {
@@ -94,10 +108,13 @@
   }
 
   &:hover {
-    .dude-infos {
-      left: 100%;
-      // transition: left 0s ease-in 0s;
-    }
+    // .dude-infos {
+    //   left: 100%;
+    //   background: red;
+    //   transition: left 0.3s ease-in 400ms;
+    //   // transition: left 0s ease-in 0s;
+    // }
+
     .strip {
       &.strip-top,
       &.strip-bottom {
