@@ -1,57 +1,73 @@
+$color-slider: #4965ab;
+$color: lighten(#4965ab, 20%);
+
 .card {
-  // border: 1px solid red;
+  position: relative;
   height: 200px;
   width: 200px;
 
-  position: relative;
+  font-size: 20px;
+
+  .hint {
+    color: white;
+    font-size: 1em;
+    font-family: Geneva, Verdana, sans-serif;
+  }
 
   .link {
-    display: block;
-    position: relative;
+    //flex alignment
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    position: relative;
     width: 100%;
     height: 100%;
-    background-color: #fff;
-    background: burlywood;
 
-    // transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    //
+    text-decoration: none;
+    background: $color;
     z-index: 2;
-    // background: 0;
 
-    img {
-      text-align: center;
-    }
+    //apply transition and "reverse" delays
+    &:hover {
+      & + .slider {
+        left: 100%;
+        transition-delay: 500ms;
+      }
 
-    &:hover + .dude-infos {
-      // background: green;
-      left: 100%;
-      transition: left 0.3s ease-in;
-      transition-delay: 450ms;
+      .strip {
+        &.strip-top,
+        &.strip-bottom {
+          width: 100%;
+          transition-delay: 250ms;
+        }
+
+        &.strip-right,
+        &.strip-left {
+          height: 100%;
+          transition-delay: 0ms;
+        }
+      }
     }
   }
 
-  .dude-infos {
+  .slider {
     position: absolute;
-    left: 0%;
+    left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    color: #5a442e;
-    text-align: center;
-    background-color: #aca196;
-    background: chocolate;
 
-    transition: left 0.3s ease-in;
+    background: $color-slider;
+
+    transition: left 0.3s ease-in-out;
     transition-delay: 0s;
-    z-index: 1;
 
-    // &:hover {
-    //   left: 100%;
-    //   transition: left 0.3s ease-in 1000ms;
-    //   // transition: left 0.3s ease-in 0s;
-    //   background: red;
-    // }
+    //flex alignment
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .strips {
@@ -61,219 +77,43 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    // background: brown;
 
     .strip {
-      transition: all 0.3s ease-in;
+      background-color: $color-slider;
+      position: absolute;
+      transition: all 0.3s ease-in-out;
 
       &.strip-top {
-        position: absolute;
-        left: 0;
         top: 0;
         width: 0;
         height: 5px;
-        background-color: chocolate;
-        transition-delay: 0.2s;
-        // z-index: 2;
+
+        transition-delay: 250ms;
       }
 
       &.strip-bottom {
-        position: absolute;
-        left: 0;
         bottom: 0;
         width: 0;
         height: 5px;
-        background-color: chocolate;
-        transition-delay: 0.2s;
+
+        transition-delay: 250ms;
       }
 
       &.strip-right {
-        position: absolute;
-        left: 0;
         top: 50%;
         width: 5px;
         height: 0;
-        background-color: chocolate;
+
+        transition-delay: 500ms;
       }
 
       &.strip-left {
-        position: absolute;
-        left: 0;
         bottom: 50%;
         width: 5px;
         height: 0;
-        background-color: chocolate;
-      }
-    }
-  }
 
-  &:hover {
-    // .dude-infos {
-    //   left: 100%;
-    //   background: red;
-    //   transition: left 0.3s ease-in 400ms;
-    //   // transition: left 0s ease-in 0s;
-    // }
-
-    .strip {
-      &.strip-top,
-      &.strip-bottom {
-        width: 100%;
-      }
-      &.strip-right,
-      &.strip-left {
-        height: 100%;
+        transition-delay: 500ms;
       }
     }
   }
 }
-
-/*
-#dude-container {
-  float: left;
-}
-#dude-container .dude {
-  float: left;
-  position: relative;
-  width: 200px;
-  -moz-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -o-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  z-index: 0;
-}
-#dude-container .dude[data-hover="true"] {
-  z-index: 1;
-}
-#dude-container .dude[data-active="false"] {
-  opacity: 0.3;
-}
-#dude-container .dude[data-active="false"] .link {
-  cursor: default;
-}
-#dude-container .dude .link {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-
-  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  z-index: 1;
-}
-#dude-container .dude .photo {
-  display: block;
-  width: 100%;
-  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-#dude-container .dude[data-display="text"] .link {
-  background: 0;
-}
-#dude-container .dude[data-display="text"] .link img {
-  opacity: 0;
-}
-#dude-container .dude[data-display="text"] .strip-top {
-  left: 0% !important;
-  height: 1px;
-  background-color: #5a442e;
-}
-#dude-container .dude[data-display="text"] .strip-right {
-  top: 0% !important;
-  width: 1px;
-  height: 100% !important;
-  background-color: #5a442e;
-}
-#dude-container .dude[data-display="text"] .strip-bottom {
-  left: 0% !important;
-  height: 1px;
-  background-color: #5a442e;
-}
-#dude-container .dude[data-display="text"] .strip-left {
-  top: 0% !important;
-  width: 1px;
-  height: 100% !important;
-  background-color: #5a442e;
-}
-#dude-container .strips {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-#dude-container .strip-top {
-  position: absolute;
-  left: 100%;
-  top: 0;
-  width: 100%;
-  height: 5px;
-  background-color: #aca196;
-}
-#dude-container .strip-right {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 5px;
-  height: 0%;
-  background-color: #aca196;
-}
-#dude-container .strip-bottom {
-  position: absolute;
-  left: 100%;
-  bottom: 0;
-  width: 100%;
-  height: 5px;
-  background-color: #aca196;
-}
-#dude-container .strip-left {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 5px;
-  height: 0%;
-  background-color: #aca196;
-}
-.dude-infos {
-  position: absolute;
-  left: 0%;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  color: #5a442e;
-  text-align: center;
-  background-color: #aca196;
-}
-.dude-infos .text {
-  position: relative;
-  top: 50%;
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  padding: 0 15px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.dude-infos-name {
-  padding-bottom: 4px;
-  font: normal 18px/18px "RR";
-  text-transform: uppercase;
-}
-.dude-infos-name .name,
-.dude-infos-name .surname {
-  display: block;
-}
-.dude-infos-name:after {
-  content: "";
-  display: block;
-  width: 15px;
-  height: 1px;
-  margin: 5px auto 0 auto;
-  background-color: #8a8178;
-}
-.dude-infos-speciality {
-  font: normal 14px "RL";
-}
-*/

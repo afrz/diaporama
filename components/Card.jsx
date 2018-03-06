@@ -3,14 +3,9 @@ import "./Card.scss";
 
 const Card = () => {
   return (
-    <div
-      className="card dude"
-      data-city="lyon paris"
-      data-speciality="droit-social"
-      data-hover="false"
-    >
+    <div className="card dude">
       <a href="#" className="link">
-        <img alt="Alexis Franzosisch" className="photo" />
+        <span className="hint">Hello you</span>
         <div className="strips">
           <div className="strip strip-top" />
           <div className="strip strip-right" />
@@ -18,16 +13,10 @@ const Card = () => {
           <div className="strip strip-left" />
         </div>
       </a>
-      <div className="dude-infos">
-        <div className="text">
-          <h3 className="dude-infos-name">
-            <span className="name">Alexis</span>
-            <span className="surname">Franzosisch</span>
-          </h3>
-          <h2 className="dude-infos-speciality">DEVELOPER</h2>
-        </div>
-        <div className="arrow">
-          <div className="square" />
+      <div className="slider">
+        <div className="hint">
+          <h3>Voila!</h3>
+          <h4>Blah blah...</h4>
         </div>
       </div>
     </div>
