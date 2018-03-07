@@ -3,7 +3,7 @@ import "./Button.scss";
 
 const Button = ({ children }) => {
   return (
-    <li className="btn-effect no-active">
+    <li className="btn-effect">
       <a>
         {children}
         <span className="line-1" />

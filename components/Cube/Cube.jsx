@@ -4,8 +4,8 @@ import "./Cube.scss";
 const Cube = () => {
   return (
     <section className="cube-container">
-      <div id="cube">
-        <div className="figure front">FRONT</div>
+      <div className="cube">
+        <div className="figure front">GO</div>
         <div className="figure back" />
         <div className="figure right" />
         <div className="figure left" />

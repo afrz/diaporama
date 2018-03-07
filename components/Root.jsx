@@ -1,9 +1,9 @@
 import React from "react";
 import "./Root.scss";
 
-import Cube from "./Cube";
-import Button from "./Button";
-import Card from "./Card";
+import { Button } from "./Button";
+import { Card } from "./Card";
+import { Cube } from "./Cube";
 
 const Root = () => {
   return (
@@ -12,11 +12,12 @@ const Root = () => {
         <Cube />
       </div>
       <div className="flexible column">
-        <Button>ADN</Button>
-        <Button>Compétences</Button>
-        <Button>Equipes</Button>
+        <Button>Documentation</Button>
+        <Button>Tech</Button>
+        <Button>Team</Button>
+        <Button>About</Button>
       </div>
-      <div className="flexible ">
+      <div className="flexible">
         <Card />
       </div>
     </React.Fragment>
