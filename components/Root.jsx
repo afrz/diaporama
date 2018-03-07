@@ -5,14 +5,10 @@ import Cube from "./Cube";
 import Button from "./Button";
 import Card from "./Card";
 
-import CardContainer from "./CardContainer";
-
 const Root = () => {
   return (
     <React.Fragment>
       <div className="flexible">
-        <Cube />
-        <Cube />
         <Cube />
       </div>
       <div className="flexible column">
@@ -20,9 +16,9 @@ const Root = () => {
         <Button>Compétences</Button>
         <Button>Equipes</Button>
       </div>
-      <CardContainer>
+      <div className="flexible ">
         <Card />
-      </CardContainer>
+      </div>
     </React.Fragment>
   );
 };
